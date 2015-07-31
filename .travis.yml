@@ -29,7 +29,7 @@ script:
     && (echo 'Idempotence test: pass' && exit 0)
     || (echo 'Idempotence test: fail' && exit 1)
 
-  # Check to make sure we can connect to MySQL via mycli socket.
+  # Check to make sure mycli is installed.
   - >
     which mycli
     | grep -q '/usr/local/bin/mycli'
