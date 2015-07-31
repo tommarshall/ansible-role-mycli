@@ -1,6 +1,8 @@
 Ansible Role: mycli
 =========
 
+[![Build Status](https://travis-ci.org/tommarshall/ansible-role-mycli.svg?branch=master)](https://travis-ci.org/tommarshall/ansible-role-mycli)
+
 Installs [mycli](http://mycli.net/) on RHEL/CentOS or Debian/Ubuntu servers.
 
 Requirements
