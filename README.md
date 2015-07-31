@@ -25,8 +25,6 @@ Although it's worth mentioning that this role only installs mycli, not MySQL its
 Example Playbook
 ----------------
 
-Including an example of how to use your role (for instance, with variables passed in as parameters) is always nice for users too:
-
     - hosts: db-servers
       roles:
          - { role: tommarshall.mycli }
