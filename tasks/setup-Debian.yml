@@ -1,0 +1,25 @@
+---
+# ref: https://github.com/dbcli/mycli/blob/v1.0.1/README.md#debianubuntu-package
+
+- name: Add the gpg key for packagecloud for package verification.
+  get_url:
+    dest: /etc/apt/trusted.gpg.d
+    url: https://packagecloud.io/gpg.key
+  register: packagecloud_gpg_key
+
+- name: Add the mycli package repo to the apt source.
+  apt_repository:
+    repo: deb https://packagecloud.io/amjith/mycli/ubuntu/ trusty main
+    state: present
+  register: sslmate_source
+
+- name: Check if mycli is already installed.
+  stat: path=/usr/share/python/mycli/bin/mycli
+  register: mycli_installed
+
+- name: Update apt cache if mycli is not yet installed.
+  apt: update_cache=yes
+  when: mycli_installed.stat.exists == false
+
+- name: Install mycli.
+  apt: name=mycli state=installed

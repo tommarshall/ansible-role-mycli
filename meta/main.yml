@@ -1,0 +1,22 @@
+---
+dependencies: []
+
+galaxy_info:
+  author: tommarshall
+  description: A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting.
+  company:
+  license: "license (BSD, MIT)"
+  min_ansible_version: 1.4
+  platforms:
+  - name: EL
+    versions:
+    - 6
+    - 7
+  - name: Ubuntu
+    versions:
+    - all
+  - name: Debian
+    versions:
+    - all
+  categories:
+    - database

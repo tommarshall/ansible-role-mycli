@@ -1,0 +1,7 @@
+---
+# ref: https://github.com/dbcli/mycli/blob/v1.0.1/README.md#rhel-centos-fedora
+
+- name: Ensure MySQL packages are installed.
+  yum: "name=python-pip state=installed"
+
+- pip: name=mycli
