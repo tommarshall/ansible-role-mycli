@@ -18,7 +18,7 @@ Dependencies
 
 None.
 
-Although it's worth mentioning that this role only installs mycli, not MySQL itself. If you want a role for installing MySQL I'd recommend Jeff Geerling's excellent [ansible-role-mysql](https://github.com/geerlingguy/ansible-role-mysql).
+Although it's worth mentioning that this role only installs mycli, not MySQL itself. If you want a role for installing MySQL I'd recommend Jeff Geerling's excellent [MySQL role](https://github.com/geerlingguy/ansible-role-mysql).
 
 Example Playbook
 ----------------
