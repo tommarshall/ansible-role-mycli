@@ -2,9 +2,10 @@
 # ref: https://github.com/dbcli/mycli/blob/v1.0.1/README.md#debianubuntu-package
 
 - name: Add the gpg key for packagecloud for package verification.
-  get_url:
-    dest: /etc/apt/trusted.gpg.d
+  apt_key:
     url: https://packagecloud.io/gpg.key
+    keyring: /etc/apt/trusted.gpg.d/packagecloud.gpg
+    state: present
 
 - name: Add the mycli package repo to the apt source.
   apt_repository:
