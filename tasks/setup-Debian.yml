@@ -9,7 +9,7 @@
 
 - name: Add the mycli package repo to the apt source.
   apt_repository:
-    repo: "deb https://packagecloud.io/amjith/mycli/ubuntu/ {{ ansible_distribution_release }} main"
+    repo: "deb https://packagecloud.io/amjith/mycli/ubuntu/ trusty main"
     state: present
 
 - name: Check if mycli is already installed.
