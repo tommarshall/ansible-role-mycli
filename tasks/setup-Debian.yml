@@ -1,11 +1,17 @@
 ---
-# ref: https://github.com/dbcli/mycli/blob/v1.0.1/README.md#debianubuntu-package
+# ref: https://github.com/dbcli/mycli/blob/v1.5.2/README.md#debianubuntu-package
 
 - name: Add the gpg key for packagecloud for package verification.
   apt_key:
     url: https://packagecloud.io/gpg.key
     keyring: /etc/apt/trusted.gpg.d/packagecloud.gpg
     state: present
+
+- name: Update apt cache.
+  apt: update_cache=yes cache_valid_time=86400
+
+- name: Install apt-transport-https.
+  apt: name=apt-transport-https state=latest
 
 - name: Add the mycli package repo to the apt source.
   apt_repository:
@@ -21,4 +27,4 @@
   when: mycli_installed.stat.exists == false
 
 - name: Install mycli.
-  apt: name=mycli state=installed
+  apt: name=mycli state=latest
