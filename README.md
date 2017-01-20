@@ -13,7 +13,10 @@ None.
 Role Variables
 --------------
 
-None.
+```
+mycli_version: 1.8.1
+```
+The version of mycli to install.
 
 Dependencies
 ------------
