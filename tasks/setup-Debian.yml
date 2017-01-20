@@ -1,30 +1,10 @@
 ---
-# ref: https://github.com/dbcli/mycli/blob/v1.5.2/README.md#debianubuntu-package
-
-- name: Add the gpg key for packagecloud for package verification.
-  apt_key:
-    url: https://packagecloud.io/gpg.key
-    keyring: /etc/apt/trusted.gpg.d/packagecloud.gpg
-    state: present
+# ref: https://github.com/dbcli/mycli/blob/v1.8.1/README.md#quick-start
 
 - name: Update apt cache.
   apt: update_cache=yes cache_valid_time=86400
+  become: yes
 
-- name: Install apt-transport-https.
-  apt: name=apt-transport-https state=latest
-
-- name: Add the mycli package repo to the apt source.
-  apt_repository:
-    repo: "deb https://packagecloud.io/amjith/mycli/ubuntu/ trusty main"
-    state: present
-
-- name: Check if mycli is already installed.
-  stat: path=/usr/share/python/mycli/bin/mycli
-  register: mycli_installed
-
-- name: Update apt cache if mycli is not yet installed.
-  apt: update_cache=yes
-  when: mycli_installed.stat.exists == false
-
-- name: Install mycli.
-  apt: name=mycli state=latest
+- name: Install python-pip via apt.
+  apt: "name=python-pip state=installed"
+  become: yes
