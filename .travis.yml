@@ -35,3 +35,6 @@ script:
     | grep -q '/usr/local/bin/mycli'
     && (echo 'mycli installed' && exit 0)
     || (echo 'mycli not installed' && exit 1)
+
+notifications:
+  webhooks: https://galaxy.ansible.com/api/v1/notifications/
