@@ -8,3 +8,9 @@
 - name: Install python-pip via apt.
   apt: "name=python-pip state=installed"
   become: yes
+
+- name: Install mycli dependencies via apt.
+  apt: "name={{ item }} state=installed"
+  become: yes
+  with_items:
+    - python-dev  # required by pycrypto
