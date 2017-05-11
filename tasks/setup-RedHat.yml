@@ -1,5 +1,5 @@
 ---
-# ref: https://github.com/dbcli/mycli/blob/v1.8.1/README.md
+# ref: https://github.com/dbcli/mycli/blob/v1.10.0/README.md
 
 - name: Install python-pip via yum.
   yum: "name=python-pip state=installed"
