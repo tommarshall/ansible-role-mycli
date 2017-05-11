@@ -14,7 +14,7 @@ Role Variables
 --------------
 
 ```
-mycli_version: 1.8.1
+mycli_version: 1.10.0
 ```
 The version of mycli to install.
 
